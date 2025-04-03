@@ -23,9 +23,10 @@ import random
 
 def solution(N):
     num = list(bin(N))
-
+    
     del num [0]
     del num [0]
+    print(num)
     
     qtd   = 0
     maior = 0
@@ -40,7 +41,7 @@ def solution(N):
     return(maior)
     
 # n = random.randrange(1 , 647)
-n = 561892
+n = random.randrange(1, 10000)
 print ("\n número: ",n,"\n")
 
 print("O maior gap é",solution(n))
