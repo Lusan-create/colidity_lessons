@@ -21,37 +21,26 @@
 import random
 
 
-def solution (n):
-    
-    #Transforma o número em binário
-    num = list(bin(n))
-    
-    #Retira "0b" da transformação da base 10 para a 2.
-    del num [0] 
+def solution(N):
+    num = list(bin(N))
+
     del num [0]
-    print (num, "\n")
+    del num [0]
     
-    #Inicia as variaveis que serão utilizadas posteriormente
     qtd   = 0
     maior = 0
-    
-    
-    for x in range(len(num)-1, 0, -1):
-        if num[x] == "0":
-            if maior == 0:
-                maior = 1
-            qtd = qtd + 1
-            
+
+    for x in num:
+        if x == "0":
+            qtd += 1
         else:
             if qtd > maior:
-                maior = qtd
+                maior =  qtd
             qtd = 0
-        
-    return (maior)
+    return(maior)
     
-    
-    
-n = random.randrange(1 , 647)
+# n = random.randrange(1 , 647)
+n = 561892
 print ("\n número: ",n,"\n")
 
 print("O maior gap é",solution(n))
